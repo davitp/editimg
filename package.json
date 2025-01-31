@@ -1,0 +1,61 @@
+{
+  "name": "editimg",
+  "version": "0.0.0-development",
+  "type": "module",
+  "private": false,
+  "description": "A simple tool to edit images.",
+  "packageManager": "pnpm@9.15.4",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "davitp",
+    "url": "https://github.com/davitp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davitp/editimg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davitp/editimg/issues"
+  },
+  "homepage": "https://github.com/davitp/editimg#readme",
+  "files": [
+    "dist"
+  ],
+  "main": "index.tss",
+  "exports": "./dist/index.js",
+  "bin": "./dist/index.js",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.33.0",
+    "chalk": "^5.4.1",
+    "commander": "^12.1.0",
+    "date-fns": "^4.1.0",
+    "glob": "^11.0.1",
+    "net": "^1.0.2",
+    "open": "^10.1.0",
+    "ora": "^8.1.1",
+    "piscina": "5.0.0-alpha.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
+    "@types/archiver": "^6.0.3",
+    "@types/node": "^22.10.7",
+    "semantic-release": "^24.2.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
+  }
+}
