@@ -5,13 +5,13 @@ import splitCommand from './split';
 const program = createCommand();
 
 program
-  .name(name)
+  .name("editimg")
   .description('A simple CLI tool to edit images')
   .version(version, '-v, --version')
   .enablePositionalOptions();
 
 program.addCommand(splitCommand);
-;
+
 
 export default program;
 
