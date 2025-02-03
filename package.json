@@ -1,5 +1,5 @@
 {
-  "name": "editimg",
+  "name": "@davitp/editimg",
   "version": "0.0.0-development",
   "type": "module",
   "private": false,
@@ -26,7 +26,9 @@
   ],
   "main": "index.tss",
   "exports": "./dist/index.js",
-  "bin": "./dist/index.js",
+  "bin": {
+    "editimg": "./dist/index.js"
+  },  
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
