@@ -4,7 +4,8 @@ import { Path, glob } from "glob";
 import path from 'path';
 import { ImageEntry } from "@/core/types";
 import fsPromise from 'fs/promises'
-import splitImage from "./worker";
+import splitImage from "@/services/split-image";
+import { logger } from "@/services/logger";
 
 const VALID_PART_VARIANTS: Record<string, { rows: number, cols: number }> = {
     '1': { rows: 1, cols: 1 },
@@ -43,13 +44,12 @@ splitCommand
         await fsPromise.mkdir(outputDir, { recursive: true });
 
         const { rows, cols } = partsRowCol;
-        console.log(`Splitting into ${rows} rows x ${cols} columns (${parts} parts).`);
 
         await Promise.all(images.map(file => splitImage({
             file, outputDir, rows, cols
          })));
 
-        console.log("All images processed successfully.");
+        logger.just("All images processed successfully.");
     }));
 
 async function getImageFiles(directory: string): Promise<ImageEntry[]> {
